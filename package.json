@@ -40,7 +40,7 @@
     "prettier": "^3.3.3"
   },
   "lint-staged": {
-    "sum.js": "eslint --fix",
+    "*.js": "eslint --fix",
     "*.{js,css,md}": "prettier --write"
   }
 }
