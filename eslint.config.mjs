@@ -6,12 +6,17 @@ import eslintConfigPrettier from "eslint-config-prettier";
 export default [
   {
     languageOptions: {
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        it: "readonly",
+        describe: "readonly",
+        expect: "readonly",
+        module: "writable",
+      },
     },
     plugins: {
       jest: pluginJest,
     },
-    ignores: ["**/*.test.js", "!**/eslint.config.mjs"],
     rules: {
       "prefer-const": "warn",
       "no-irregular-whitespace": "error",
